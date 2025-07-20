@@ -3,7 +3,7 @@ import { test, expect } from "../Fixtures/Fixtures"
 import{faker} from "@faker-js/faker"
 
 
-test.describe("TS-1: Testing Labelling", async () => {
+test.describe(" Testing Labelling", async () => {
 
     test.beforeEach(async ({ login }) => {
 
@@ -39,9 +39,11 @@ test.describe("TS-1: Testing Labelling", async () => {
     })
 
     test("TC-3: A note should be successfully labelled", async()=>{
-        
+      //Verify the note is labeled as selected  
     })
-
+    test("TC-4: A label should be successfully renamed", async()=>{
+        //Verify the labeled is successfully renamed
+    })
    
 })
 

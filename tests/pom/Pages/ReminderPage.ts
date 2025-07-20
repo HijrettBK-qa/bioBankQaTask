@@ -12,9 +12,6 @@ export default class ReminderPage {
   //go to reminders
   async goReminders() { await this.page.getByLabel('Reminders').getByText('Reminders').click(); }
 
-  //click "take a note"
-  async takeANote() { await this.page.locator('p').first().click() };
-
   //set a title
 
   async titleName(reminderTitle: string) {
@@ -24,7 +21,7 @@ export default class ReminderPage {
   //take a note
   async editNote(note: string) {
     await this.page.locator('p').first().click();
-    await this.page.getByRole('combobox').filter({ hasText: 'Taking a note' }).fill(note);
+    await this.page.getByRole('combobox').fill(note);
 
   }
 
@@ -34,7 +31,7 @@ export default class ReminderPage {
     await this.page.getByText('Pick date & time').nth(1).click({
       button: 'right'
     });
-   
+
     await this.page.getByPlaceholder('Add a date').click();
     await this.page.getByLabel('30 Jul').click();
 
@@ -50,7 +47,7 @@ export default class ReminderPage {
   async setTime(timePeriod: string) {
 
     await this.page.getByPlaceholder('Add a time').click();
-    await this.page.getByText(timePeriod).click(); // Add "Morning", "Afternoon","Evening", "Night", "Custom
+    await this.page.getByText(timePeriod).click();
     await this.page.getByText('Monthly').click();
     await this.page.getByText('Pick date & timeMorning8:00').click();
   }
@@ -61,4 +58,19 @@ export default class ReminderPage {
   //Close the note
   async closeBtn() { await this.page.getByText('Close', { exact: true }).nth(4).click(); }
 
+  //Delete the reminder
+  async deleteReminder(reminderName: string) {
+    await this.page.getByRole('button', { name: 'More' }).click();
+    await this.page.getByText('Delete note', { exact: true }).click();
+
+   
+
+  }
+  async verifyDeletion(reminderName: string) {
+    
+    await this.page.getByRole('combobox', { name: 'Search' }).fill(reminderName);
+    await this.page.getByRole('combobox', { name: 'Search' }).press('Enter');
+    await expect(this.page.getByText('No matching results.')).toBeVisible();
+    console.log("🍀It seems reminder is deleted successfully!") //If I would have more time, I would make it with if statement to make it more dynamic
+  }
 }

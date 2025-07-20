@@ -18,8 +18,16 @@ export default class LoginPage {
     await this.page.getByRole('textbox', { name: 'Enter your password' }).fill(password);
     await this.page.getByRole('button', { name: 'Next' }).click();
 
-    await expect(this.page.getByText('test.biobank25@gmail.com')).toBeVisible();
+    await expect(this.page.getByText(email)).toBeVisible();
 
+  }
+  async clckNameInitial() { await this.page.locator(".gb_B.gb_Za.gb_0").click() }
+  async signout() {
+    await this.clckNameInitial()
+    await this.page.getByText("Sign out").click();
+  }
+  async verifyLogout() {
+    expect(await this.page.getByText("Choose an account").isVisible());
   }
 
 }
