@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import LoginPage from '../Pages/LoginPAge';
+import LoginPage from '../Pages/LoginPage';
 import LabelPage from '../Pages/LabelPage';
 import NotePage from '../Pages/NotePage';
 import ReminderPage from '../Pages/ReminderPage';
@@ -12,7 +12,6 @@ type myFixtures = {
   list: ListPage;
   note:NotePage
   reminder: ReminderPage;
-
 
 }
 // Extend base test by providing "todoPage" and "settingsPage".
