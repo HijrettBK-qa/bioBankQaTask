@@ -24,10 +24,16 @@ export default class LoginPage {
   async clckNameInitial() { await this.page.locator(".gb_B.gb_Za.gb_0").click() }
   async signout() {
     await this.clckNameInitial()
-    await this.page.getByText("Sign out").click();
+    await this.page.getByText('Sign out', { exact: true }).click();
+    //await this.page.getByText("Sign out").click({ timeout:70000 });
   }
-  async verifyLogout() {
+  async verifySignout() {
     expect(await this.page.getByText("Choose an account").isVisible());
+  }
+  async verifyLogin(email:string){
+    await this.page.locator("a.gb_B.gb_Za.gb_0").hover();
+    await expect(this.page.getByText(email).first()).toBeVisible();
+    
   }
 
 }

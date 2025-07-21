@@ -29,5 +29,9 @@ npx playwright show-report  => run test and show the html report right after tha
 
 The Playwright team has released a VS Code Extension that allows you to debug tests easily with the click or right click of a button.
 
+**Notes**
 
+This framework is organised with Page Object Model. 
+All related methods and locators are stored in Page files. 
+Main test cases can be found in tests/tests/ as ".spec" files. 
 
