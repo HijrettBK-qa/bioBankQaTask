@@ -23,7 +23,6 @@ test.describe(" Testing Labelling", async () => {
         await label.doneBtn();
 
     })
-
     test("TC-2: If the label name exists, new one should not be created", async({page,label})=>{
         const labelName = faker.animal.bird();
 
@@ -37,7 +36,6 @@ test.describe(" Testing Labelling", async () => {
         await label.checkDuplicatedLabel();  
 
     })
-
     test("TC-3: A note should be successfully labelled", async()=>{
       //Verify the note is labeled as selected  
     })

@@ -33,5 +33,6 @@ The Playwright team has released a VS Code Extension that allows you to debug te
 
 This framework is organised with Page Object Model. 
 All related methods and locators are stored in Page files. 
-Main test cases can be found in tests/tests/ as ".spec" files. 
+Main test cases can be found in tests/tests/ as ".spec" files.
+For dynamic test data, Faker class is used. 
 
