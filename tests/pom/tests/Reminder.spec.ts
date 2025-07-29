@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker"
 import { expect, test } from "../Fixtures/Fixtures"
-import { verify } from "crypto"
 
 test.describe("Testing Reminder", async () => {
 

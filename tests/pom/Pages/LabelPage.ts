@@ -26,7 +26,6 @@ export default class LabelPage {
         } else {
             console.log("❌Duplicated label should not be created! Check if there is a problem")
         }
-
     }
     // await expect(this.page.getByText("Label already exists").first()).toBeVisible();}
 

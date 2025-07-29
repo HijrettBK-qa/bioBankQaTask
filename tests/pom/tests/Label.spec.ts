@@ -37,10 +37,10 @@ test.describe(" Testing Labelling", async () => {
 
     })
     test("TC-3: A note should be successfully labelled", async()=>{
-      //Verify the note is labeled as selected  
+      //Verify the note is labelled as selected  
     })
     test("TC-4: A label should be successfully renamed", async()=>{
-        //Verify the labeled is successfully renamed
+        //Verify the labelled is successfully renamed
     })
    
 })
